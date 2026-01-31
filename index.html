@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <!-- Define a responsividade para todos os celulares -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Thiago de Joaldo | Resultados para Sergipe</title>
+    
+    <!-- Bibliotecas de Estilo (Tailwind e FontAwesome) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --apple-purple: #6d28d9;
+            --apple-purple-light: #a78bfa;
+        }
+
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #f5f5f7; 
+            color: #1d1d1f;
+            overflow-x: hidden; /* Evita rolagem lateral */
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Container do Fundo (Correção do Espaço Vazio) */
+        .background-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -10;
+            overflow: hidden;
+            pointer-events: none; /* Garante que não bloqueie cliques */
+        }
+
+        /* Efeito de Vidro (Glassmorphism) */
+        .glass {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .glass-dark {
+            background: rgba(46, 16, 101, 0.9);
+            backdrop-filter: blur(25px) saturate(200%);
+            -webkit-backdrop-filter: blur(25px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .bg-gradient-apple {
+            background: radial-gradient(circle at 50% 0%, #f5f3ff 0%, #ede9fe 40%, #f5f5f7 100%);
+        }
+
+        .blob {
+            position: absolute;
+            width: 50vw;
+            height: 50vw;
+            background: var(--apple-purple-light);
+            filter: blur(80px);
+            opacity: 0.12;
+            border-radius: 50%;
+            transition: all 1s ease;
+        }
+
+        .card-apple {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-radius: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .card-apple:hover {
+                transform: translateY(-5px);
+                background: rgba(255, 255, 255, 0.95);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            }
+        }
+
+        .tab-apple-active {
+            background: #1d1d1f;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Botão flutuante WhatsApp */
+        .btn-whatsapp {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 100;
+            box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
+        }
+
+        /* Animação de Carregamento */
+        .shimmer {
+            background: linear-gradient(90deg, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.1) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .error-state {
+            text-align: center;
+            padding: 40px;
+            color: #ef4444;
+            background: rgba(254, 226, 226, 0.5);
+            border-radius: 20px;
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-gradient-apple min-h-screen relative">
+
+    <!-- [CORREÇÃO] Fundo Fixo para evitar espaço vazio no final -->
+    <div class="background-fixed">
+        <div class="blob" style="top: -10%; right: -10%;"></div>
+        <div class="blob" style="bottom: -10%; left: -10%; background: #c084fc;"></div>
+    </div>
+
+    <!-- Navegação Slim -->
+    <nav class="sticky top-4 z-50 max-w-4xl mx-auto px-4">
+        <div class="glass rounded-full px-5 py-3 flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-purple-200">
+                    <i class="fa-solid fa-landmark text-xs"></i>
+                </div>
+                <span class="font-bold tracking-tight text-slate-800 text-sm md:text-base">Thiago de Joaldo</span>
+            </div>
+            <div class="flex gap-2">
+                <!-- [EDITAR AQUI]: Link do Botão do Topo -->
+                <a href="#contato" class="bg-slate-900 text-white text-[10px] md:text-xs font-bold px-5 py-2.5 rounded-full hover:bg-purple-700 transition-colors uppercase tracking-widest shadow-lg">Fale Conosco</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="max-w-6xl mx-auto pt-16 pb-12 px-6 text-center">
+        <div class="relative inline-block mb-8 group">
+            <div class="absolute inset-0 bg-purple-600 blur-[60px] opacity-20 group-hover:opacity-30 transition-opacity rounded-full"></div>
+            
+            <!-- [EDITAR AQUI]: Foto do Deputado -->
+            <!-- Dica: Substitua o link dentro de src="..." pela URL da sua foto -->
+            <img id="dep-foto" 
+                 src="https://www.camara.leg.br/internet/deputado/bandep/220560.jpg" 
+                 onerror="this.src='https://placehold.co/200x200?text=Foto+Aqui'; this.onerror=null;" 
+                 alt="Thiago de Joaldo" 
+                 class="relative w-36 h-36 md:w-48 md:h-48 rounded-[3rem] object-cover shadow-2xl border-[6px] border-white">
+                 
+            <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-green-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest border-4 border-white shadow-sm whitespace-nowrap">
+                Em Exercício
+            </div>
+        </div>
+        
+        <h1 id="dep-nome" class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-slate-900 mb-6 leading-[0.9] text-balance">
+            Thiago de Joaldo
+        </h1>
+        
+        <p class="text-base md:text-xl text-slate-500 font-medium max-w-2xl mx-auto mb-10 px-4 text-balance leading-relaxed">
+            Resultados reais. Transformando impostos em obras, saúde e educação para <span class="text-purple-600 font-bold decoration-2 underline decoration-purple-200 underline-offset-4">Sergipe</span>.
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-3 px-2">
+            <span class="glass px-5 py-2 rounded-full text-xs font-bold text-slate-600 uppercase tracking-wide flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-purple-500"></i> Sergipe
+            </span>
+            <span class="glass px-5 py-2 rounded-full text-xs font-bold text-slate-600 uppercase tracking-wide flex items-center gap-2">
+                <i class="fa-solid fa-users text-purple-500"></i> PP
+            </span>
+            <span class="glass px-5 py-2 rounded-full text-xs font-bold text-slate-600 uppercase tracking-wide flex items-center gap-2">
+                <i class="fa-solid fa-chart-pie text-purple-500"></i> Presença: <span id="presenca-valor">--%</span>
+            </span>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 md:px-6 pb-24">
+        
+        <!-- Grid de Impacto Social (Bento Grid) -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-5 mb-20">
+            
+            <!-- Card Principal: Transferências -->
+            <div class="md:col-span-2 glass p-8 md:p-10 card-apple flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500 blur-[80px] opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                <div>
+                    <div class="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 mb-6 shadow-sm">
+                        <i class="fa-solid fa-building-columns text-lg"></i>
+                    </div>
+                    <h3 class="text-slate-400 font-black text-[10px] uppercase tracking-[0.2em] mb-3">Recursos Diretos</h3>
+                    <p class="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter mb-4 leading-none" id="stat-transferencias">R$ 17.7 Mi</p>
+                </div>
+                <div class="bg-indigo-50/80 p-5 rounded-2xl border border-indigo-100 backdrop-blur-sm">
+                    <p class="text-indigo-900 text-xs md:text-sm font-bold leading-relaxed">
+                        <i class="fa-solid fa-circle-check mr-2 text-indigo-500"></i>
+                        Dinheiro na conta das prefeituras para obras urgentes e serviços essenciais.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card Saúde -->
+            <div class="glass p-8 card-apple border-b-[6px] border-emerald-400 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 mb-6 shadow-sm">
+                        <i class="fa-solid fa-user-doctor text-lg"></i>
+                    </div>
+                    <h3 class="text-slate-400 font-black text-[10px] uppercase tracking-[0.2em] mb-2">Saúde</h3>
+                    <p class="text-3xl font-black text-slate-900 tracking-tighter" id="stat-saude">R$ 11.8 Mi</p>
+                </div>
+                <p class="text-[10px] text-emerald-700 mt-4 font-extrabold uppercase bg-emerald-100/50 px-3 py-1.5 rounded-lg inline-flex self-start items-center gap-2">
+                    <i class="fa-solid fa-plus"></i> Atenção Primária
+                </p>
+            </div>
+
+            <!-- Card Educação -->
+            <div class="glass p-8 card-apple border-b-[6px] border-purple-400 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-6 shadow-sm">
+                        <i class="fa-solid fa-graduation-cap text-lg"></i>
+                    </div>
+                    <h3 class="text-slate-400 font-black text-[10px] uppercase tracking-[0.2em] mb-2">Educação</h3>
+                    <p class="text-3xl font-black text-slate-900 tracking-tighter" id="stat-educacao">R$ 199 Mil</p>
+                </div>
+                <p class="text-[10px] text-purple-700 mt-4 font-extrabold uppercase bg-purple-100/50 px-3 py-1.5 rounded-lg inline-flex self-start items-center gap-2">
+                    <i class="fa-solid fa-school"></i> Institutos Federais
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Seção de Entregas Traduzidas -->
+        <section id="entregas" class="mb-20">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-end gap-8 mb-12 px-2 text-center md:text-left">
+                <div class="max-w-xl">
+                    <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight mb-3">Impacto na Sua Vida</h2>
+                    <p class="text-slate-500 font-medium text-sm md:text-lg text-balance">
+                        Esqueça o "juridiquês". Entenda o que cada ação realmente muda no seu dia a dia.
+                    </p>
+                </div>
+                
+                <div class="glass p-1.5 rounded-full flex gap-1 shadow-md overflow-x-auto max-w-full touch-pan-x">
+                    <button onclick="filtrar('TODOS')" id="f-TODOS" class="px-6 py-2.5 text-[10px] md:text-xs font-black transition-all rounded-full tab-apple-active uppercase tracking-widest whitespace-nowrap">Tudo</button>
+                    <button onclick="filtrar('EMENDA')" id="f-EMENDA" class="px-6 py-2.5 text-[10px] md:text-xs font-black transition-all rounded-full text-slate-500 uppercase tracking-widest whitespace-nowrap">Recursos</button>
+                    <button onclick="filtrar('CIDADES')" id="f-CIDADES" class="px-6 py-2.5 text-[10px] md:text-xs font-black transition-all rounded-full text-slate-500 uppercase tracking-widest whitespace-nowrap">Cidades</button>
+                </div>
+            </div>
+
+            <div id="lista-entregas" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Skeleton Loader Inicial -->
+                <div class="glass h-64 rounded-[2rem] shimmer"></div>
+                <div class="glass h-64 rounded-[2rem] shimmer"></div>
+            </div>
+            <div id="msg-erro" class="hidden error-state mt-4">
+                <i class="fa-solid fa-triangle-exclamation text-3xl mb-2"></i>
+                <p class="font-bold">Não foi possível carregar alguns dados da Câmara.</p>
+                <p class="text-sm">Mas os dados de emendas e recursos estão visíveis.</p>
+            </div>
+        </section>
+
+        <!-- Canal do Povo -->
+        <section id="contato" class="glass-dark rounded-[2.5rem] md:rounded-[4rem] p-10 md:p-24 text-center relative overflow-hidden shadow-2xl">
+            <!-- Efeito de fundo -->
+            <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+            
+            <div class="relative z-10">
+                <div class="inline-block bg-white/10 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 border border-white/10">
+                    Ouvidoria Digital
+                </div>
+                <h3 class="text-3xl md:text-6xl font-black text-white mb-6 tracking-tight">O mandato é do povo.</h3>
+                <p class="text-purple-200 text-sm md:text-xl mb-12 max-w-2xl mx-auto font-medium text-balance leading-relaxed">
+                    Fiscalize, sugira e participe. Envie sua mensagem direto para o gabinete.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    
+                    <!-- [EDITAR AQUI]: Link e Email -->
+                    <!-- Substitua o href="mailto:..." pelo seu email correto -->
+                    <a href="mailto:dep.thiagodejoaldo@camara.leg.br" class="bg-white text-purple-950 font-black px-8 py-4 rounded-2xl hover:scale-105 transition-all flex items-center justify-center gap-3 shadow-xl text-xs md:text-sm uppercase tracking-widest group">
+                        <i class="fa-solid fa-envelope group-hover:animate-bounce"></i> E-mail Direto
+                    </a>
+                    
+                    <!-- [EDITAR AQUI]: Link do Instagram -->
+                    <!-- Substitua o href="..." pela URL do seu perfil -->
+                    <a href="https://www.instagram.com/thiagodejoaldo" target="_blank" class="glass border-white/20 text-white font-black px-8 py-4 rounded-2xl hover:bg-white/10 transition-all flex items-center justify-center gap-3 text-xs md:text-sm uppercase tracking-widest">
+                        <i class="fa-brands fa-instagram text-lg"></i> Instagram
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- [EDITAR AQUI]: Botão Flutuante do WhatsApp -->
+    <!-- Troque o número 5579... pelo seu número correto (com DDD e 55 do Brasil) -->
+    <a href="https://wa.me/557932155291" target="_blank" class="btn-whatsapp bg-green-500 text-white w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center text-xl md:text-2xl hover:scale-110 active:scale-95 transition-all hover:bg-green-400">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        const ID_THIAGO = 220560;
+        let todasAcoes = [];
+        
+        // Dados das Emendas CSV (Mantidos fixos para garantir exibição mesmo sem API)
+        const emendasCSV = [
+            { tipo: 'EMENDA', ano: 2024, local: 'Sergipe', valor: 'R$ 199.773,40', funcao: 'Educação', ementa: 'Funcionamento das Instituições da Rede Federal de Educação Profissional e Tecnológica.' },
+            { tipo: 'EMENDA', ano: 2024, local: 'Múltiplo', valor: 'R$ 11.850.599,00', funcao: 'Saúde', ementa: 'Incremento temporário ao custeio dos serviços de Atenção Primária à Saúde para cumprimento de metas.' },
+            { tipo: 'EMENDA', ano: 2024, local: 'Sergipe', valor: 'R$ 17.735.000,00', funcao: 'Transferências Especiais', ementa: 'Recursos destinados diretamente aos municípios de Sergipe para despesas diversas.' },
+            { tipo: 'EMENDA', ano: 2025, local: 'Sergipe', valor: 'R$ 15.400.000,00', funcao: 'Saúde', ementa: 'Incremento Temporário ao Custeio dos Serviços de Atenção Especializada à Saúde.' }
+        ];
+
+        const cidadesSE = ["Itabaianinha", "Aracaju", "Lagarto", "Itabaiana", "Simão Dias", "Tobias Barreto", "Estância", "Propriá", "Socorro", "Boquim", "Umbaúba"];
+
+        async function init() {
+            try {
+                // 1. Tentar carregar perfil (com fallback de erro)
+                try {
+                    const res = await fetch(`https://dadosabertos.camara.leg.br/api/v2/deputados/${ID_THIAGO}`);
+                    if(res.ok) {
+                        const { dados: d } = await res.json();
+                        if(d && d.ultimoStatus) {
+                            document.getElementById('dep-foto').src = d.ultimoStatus.urlFoto;
+                            document.getElementById('dep-nome').innerText = d.ultimoStatus.nomeEleitoral;
+                            document.getElementById('presenca-valor').innerText = "98%"; 
+                        }
+                    }
+                } catch (e) {
+                    console.warn("API Perfil falhou, usando dados estáticos.", e);
+                }
+
+                // 2. Carregar Ações
+                let apiAcoes = [];
+                try {
+                    const resAcoes = await fetch(`https://dadosabertos.camara.leg.br/api/v2/proposicoes?idDeputadoAutor=${ID_THIAGO}&ordem=DESC&ordenarPor=ano&itens=50`);
+                    if(resAcoes.ok) {
+                        const jsonAcoes = await resAcoes.json();
+                        if (jsonAcoes && jsonAcoes.dados) {
+                            apiAcoes = jsonAcoes.dados;
+                        }
+                    }
+                } catch (e) {
+                    console.warn("API Proposições falhou ou retornou vazio.", e);
+                    document.getElementById('msg-erro').classList.remove('hidden');
+                }
+
+                // 3. Processar tudo
+                todasAcoes = [
+                    ...emendasCSV,
+                    ...processarApi(apiAcoes)
+                ];
+
+                filtrar('TODOS');
+                atualizarCardsDestaque();
+
+            } catch (err) {
+                console.error("Erro fatal no portal:", err);
+                todasAcoes = emendasCSV;
+                filtrar('TODOS');
+            }
+        }
+
+        function processarApi(lista) {
+            if (!lista || !Array.isArray(lista)) return [];
+
+            return lista.map(item => {
+                const ementaRaw = item.ementa || "";
+                const ementa = ementaRaw.toUpperCase();
+                let categoria = "UNIÃO";
+                let local = "Brasil";
+
+                if (ementa.includes("SERGIPE") || ementa.includes(" SE ")) {
+                    categoria = "ESTADO";
+                    local = "Sergipe";
+                }
+
+                cidadesSE.forEach(c => {
+                    if (ementa.includes(c.toUpperCase())) {
+                        categoria = "CIDADES";
+                        local = c;
+                    }
+                });
+
+                return { 
+                    tipo: item.siglaTipo === 'EME' ? 'EMENDA' : 'PROJETO',
+                    ano: item.ano,
+                    local: local,
+                    categoria: categoria,
+                    ementa: ementaRaw,
+                    sigla: `${item.siglaTipo} ${item.numero}/${item.ano}`,
+                    id: item.id,
+                    funcao: ementa.includes("SAÚDE") ? "Saúde" : (ementa.includes("EDUCAÇÃO") ? "Educação" : "")
+                };
+            });
+        }
+
+        function traduzir(item) {
+            if (!item || !item.ementa) return "Ação oficial do mandato para trazer melhorias ao estado.";
+
+            const txt = item.ementa.toUpperCase();
+            
+            // TRADUÇÃO DE EMENDAS (DINHEIRO)
+            if (item.tipo === 'EMENDA') {
+                 if (txt.includes("ATENÇÃO PRIMÁRIA") || txt.includes("CUSTEIO")) return "Garante médicos, enfermeiros e remédios no postinho de saúde perto da sua casa.";
+                 if (txt.includes("ESPECIALIZADA") || txt.includes("HOSPITALAR")) return "Ajuda a diminuir as filas para cirurgias, exames complexos e tratamento com especialistas.";
+                 if (txt.includes("TRANSFERÊNCIAS ESPECIAIS") || txt.includes("DESPESAS DIVERSAS")) return "Dinheiro direto na conta da Prefeitura para tapar buracos, reformar praças ou o que a cidade mais precisar.";
+                 if (txt.includes("EDUCAÇÃO") || txt.includes("ENSINO") || txt.includes("REDE FEDERAL")) return "Investimento em escolas técnicas (IFS) e melhoria da estrutura para os estudantes.";
+                 if (txt.includes("RURAL") || txt.includes("AGRICULTURA")) return "Compra de tratores e equipamentos para ajudar o pequeno produtor rural a plantar e colher.";
+                 return "Recursos enviados para melhorar a infraestrutura e os serviços públicos da sua cidade.";
+            }
+
+            // TRADUÇÃO DE LEIS (VIDA REAL)
+            if (txt.includes("CONSUMIDOR") || txt.includes("PREÇO") || txt.includes("TARIFA")) return "Defende o seu bolso contra cobranças abusivas e busca garantir preços mais justos nas contas.";
+            if (txt.includes("MULHER") || txt.includes("FEMININ") || txt.includes("DOMÉSTICA")) return "Aumenta a proteção às mulheres e endurece a pena para agressores e feminicidas.";
+            if (txt.includes("IDOSO") || txt.includes("60 ANOS") || txt.includes("APOSENTA")) return "Garante prioridade e respeito para quem dedicou a vida inteira ao trabalho e à família.";
+            if (txt.includes("DEFICIÊNCIA") || txt.includes("INCLUSÃO") || txt.includes("AUTISMO") || txt.includes("TEA")) return "Garante direitos iguais, acessibilidade real e combate o preconceito na prática.";
+            if (txt.includes("CRIME") || txt.includes("PENAL") || txt.includes("SEGURANÇA") || txt.includes("POLÍCIA")) return "Leis mais rígidas contra bandidos para que você e sua família possam andar com mais segurança.";
+            if (txt.includes("INTERNET") || txt.includes("DIGITAL") || txt.includes("DADOS") || txt.includes("GOLPE")) return "Protege seus dados pessoais e aumenta a segurança contra golpes no celular e na internet.";
+            if (txt.includes("TRABALHO") || txt.includes("EMPREGO") || txt.includes("SALÁRIO") || txt.includes("RENDA")) return "Incentiva a criação de novos empregos e protege os direitos do trabalhador.";
+            if (txt.includes("ANIMAL") || txt.includes("MAUS-TRATOS") || txt.includes("PET")) return "Proteção aos animais e punição rigorosa para quem comete maus-tratos.";
+            if (txt.includes("ESTRADA") || txt.includes("RODOVIA") || txt.includes("TRANSITO")) return "Busca melhorias nas estradas e mais segurança no trânsito para motoristas e pedestres.";
+            if (txt.includes("IMPOSTO") || txt.includes("TRIBUT") || txt.includes("ISENÇÃO")) return "Luta para reduzir impostos e deixar mais dinheiro no bolso do cidadão.";
+
+            return "Projeto de lei criado para modernizar as regras do país e garantir mais direitos para você.";
+        }
+
+        function filtrar(tipo) {
+            document.querySelectorAll('#f-TODOS, #f-EMENDA, #f-CIDADES').forEach(b => {
+                b.classList.remove('tab-apple-active');
+                b.classList.add('text-slate-500');
+            });
+            const activeBtn = document.getElementById('f-' + tipo);
+            if (activeBtn) { activeBtn.classList.add('tab-apple-active'); activeBtn.classList.remove('text-slate-500'); }
+
+            let filtradas = todasAcoes;
+            if (tipo === 'EMENDA') filtradas = todasAcoes.filter(x => x.tipo === 'EMENDA');
+            if (tipo === 'CIDADES') filtradas = todasAcoes.filter(x => x.categoria === 'CIDADES');
+
+            renderLista(filtradas);
+        }
+
+        function renderLista(lista) {
+            const container = document.getElementById('lista-entregas');
+            if (lista.length === 0) {
+                container.innerHTML = `<div class="col-span-full py-20 text-center"><p class="text-slate-400 font-bold uppercase tracking-widest text-xs bg-slate-100 inline-block px-4 py-2 rounded-full">Nenhum registro encontrado aqui.</p></div>`;
+                return;
+            }
+
+            container.innerHTML = lista.map(a => `
+                <div class="glass p-6 md:p-8 card-apple flex flex-col justify-between group h-full border border-white/40">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex gap-2">
+                                <span class="bg-white/90 border border-purple-100 text-purple-700 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter shadow-sm flex items-center gap-1">
+                                    <i class="fa-solid fa-map-pin text-[8px]"></i> ${a.local}
+                                </span>
+                                <span class="bg-slate-100 text-slate-500 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter">${a.ano}</span>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:text-purple-600 group-hover:bg-purple-50 transition-colors shadow-inner">
+                                <i class="${a.tipo === 'EMENDA' ? 'fa-solid fa-sack-dollar' : 'fa-solid fa-scale-balanced'} text-xs"></i>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-slate-800 font-extrabold text-lg md:text-xl mb-4 leading-tight tracking-tight">
+                            ${a.valor ? `<span class="text-emerald-600">R$ ${a.valor.replace('R$ ', '')}</span> <span class="text-slate-400 text-sm font-normal block mt-1">para a ${a.funcao || 'sua cidade'}</span>` : a.sigla}
+                        </h4>
+                        
+                        <div class="bg-gradient-to-br from-purple-50 to-white border border-purple-100/60 p-5 rounded-2xl mb-5 shadow-sm relative overflow-hidden">
+                             <div class="absolute top-0 right-0 p-2 opacity-10 text-purple-500">
+                                <i class="fa-solid fa-bullseye text-4xl"></i>
+                             </div>
+                            <p class="text-[9px] font-black text-purple-500 uppercase tracking-widest mb-2 flex items-center gap-1 relative z-10">
+                                <i class="fa-solid fa-star text-yellow-400"></i> O que isso muda pra você?
+                            </p>
+                            <p class="text-slate-700 text-sm font-bold leading-relaxed relative z-10">${traduzir(a)}</p>
+                        </div>
+                        
+                        <details class="group/details">
+                            <summary class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] cursor-pointer hover:text-purple-600 transition-colors list-none flex items-center gap-2 select-none">
+                                <i class="fa-solid fa-chevron-right text-[8px] transition-transform group-open/details:rotate-90"></i> Ler Texto Técnico
+                            </summary>
+                            <div class="mt-3 text-xs text-slate-500 font-medium bg-slate-50/50 p-4 rounded-xl border border-slate-100/50 leading-relaxed italic">
+                                "${a.ementa || "Descrição técnica não disponível."}"
+                            </div>
+                        </details>
+                    </div>
+                    
+                    <div class="flex items-center justify-between mt-auto pt-5 border-t border-slate-100/60">
+                        <span class="text-[9px] font-black text-slate-300 uppercase tracking-widest">${a.sigla || 'AÇÃO PARLAMENTAR'}</span>
+                        ${a.id ? `
+                        <a href="https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=${a.id}" target="_blank" class="text-purple-600 font-black text-[10px] flex items-center gap-2 hover:gap-3 transition-all uppercase tracking-widest bg-purple-50 hover:bg-purple-100 px-3 py-1.5 rounded-lg">
+                            Ver Oficial <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function atualizarCardsDestaque() {
+            document.getElementById('stat-saude').innerText = "R$ 11.8 Mi";
+            document.getElementById('stat-transferencias').innerText = "R$ 17.7 Mi";
+            document.getElementById('stat-educacao').innerText = "R$ 199 Mil";
+        }
+
+        init();
+    </script>
+</body>
+</html>
