@@ -251,14 +251,77 @@
                             <i data-lucide="briefcase" class="w-6 h-6 text-plumare-green"></i>
                         </div>
                         <div>
-                            <h3 class="font-bold text-lg text-gray-800 dark:text-white">Representante</h3>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">Seja Parceiro</p>
+                            <h3 class="font-bold text-lg text-gray-800 dark:text-white">Nossa história</h3>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Conheça a Plumare</p>
                         </div>
                         <i data-lucide="chevron-right" class="w-5 h-5 text-gray-300 ml-auto group-hover:text-plumare-green transition-colors"></i>
                     </a>
                 </div>
             </section>
+<!-- SEÇÃO DE VÍDEO - ADICIONE APÓS A SEÇÃO DE LINKS SOCIAIS -->
+<section class="glass-panel p-6 rounded-[2rem]">
+    <div class="text-center mb-6">
+        <h2 class="text-2xl font-bold text-plumare-blue mb-2">Conheça Nossa História</h2>
+        <p class="text-gray-600 dark:text-gray-300">Descubra como transformamos sonhos em realidade</p>
+    </div>
 
+    <!-- Video Player Container -->
+    <div class="relative w-full max-w-4xl mx-auto">
+        <!-- Video Element -->
+        <div class="relative rounded-2xl overflow-hidden bg-black shadow-2xl">
+            <video 
+                id="plumare-video" 
+                class="w-full aspect-video"
+                poster="https://hfqcnejztaczhxattlsx.supabase.co/storage/v1/object/sign/Arquivos%20site/Gemini_Generated_Image_fri0upfri0upfri0%202.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYmU5YzEyYy0yYzBiLTQwMDItOTA0Mi0xMzU1YWNkMWQ1ZTMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJBcnF1aXZvcyBzaXRlL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfZnJpMHVwZnJpMHVwZnJpMCAyLmpwZyIsImlhdCI6MTc3MDAzNjQ2OCwiZXhwIjoxODAxNTcyNDY4fQ.n2nbAIv-je44dJa6X2CA0GeFSfWLnHlSxVHTp8FqXDM">
+                <!-- 🎥 COLE O LINK DO SEU VÍDEO DO SUPABASE AQUI 👇 -->
+                <source src="https://hfqcnejztaczhxattlsx.supabase.co/storage/v1/object/sign/Arquivos%20site/Agora_faa_uma_202602011132_rsyc3.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYmU5YzEyYy0yYzBiLTQwMDItOTA0Mi0xMzU1YWNkMWQ1ZTMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJBcnF1aXZvcyBzaXRlL0Fnb3JhX2ZhYV91bWFfMjAyNjAyMDExMTMyX3JzeWMzLm1wNCIsImlhdCI6MTc3MDA0MjY4NCwiZXhwIjoxODAxNTc4Njg0fQ.S8ESuZ9TZfkFJbMnnC8QEclrNXraNWHtEFCELqvCcFs" type="video/mp4">
+                Seu navegador não suporta a reprodução de vídeo.
+            </video>
+
+            <!-- Custom Controls Overlay -->
+            <div id="video-controls" class="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm transition-opacity duration-300 opacity-0 hover:opacity-100">
+                <!-- Play/Pause Button -->
+                <button id="play-pause-btn" class="glass-panel w-20 h-20 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-2xl">
+                    <i id="play-icon" data-lucide="play" class="w-10 h-10 text-plumare-blue"></i>
+                    <i id="pause-icon" data-lucide="pause" class="w-10 h-10 text-plumare-blue hidden"></i>
+                </button>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                <div class="flex items-center gap-3">
+                    <!-- Time Display -->
+                    <span id="current-time" class="text-white text-xs font-mono min-w-[40px]">0:00</span>
+                    
+                    <!-- Progress Bar -->
+                    <div class="flex-1 h-1.5 bg-white/20 rounded-full overflow-hidden cursor-pointer group" id="progress-bar">
+                        <div id="progress-fill" class="h-full bg-gradient-to-r from-plumare-blue to-plumare-green rounded-full w-0 transition-all group-hover:h-2"></div>
+                    </div>
+                    
+                    <!-- Duration -->
+                    <span id="duration" class="text-white text-xs font-mono min-w-[40px]">0:00</span>
+                    
+                    <!-- Volume Button -->
+                    <button id="mute-btn" class="text-white hover:text-plumare-green transition-colors">
+                        <i id="volume-icon" data-lucide="volume-2" class="w-5 h-5"></i>
+                        <i id="mute-icon" data-lucide="volume-x" class="w-5 h-5 hidden"></i>
+                    </button>
+                    
+                    <!-- Fullscreen Button -->
+                    <button id="fullscreen-btn" class="text-white hover:text-plumare-blue transition-colors">
+                        <i data-lucide="maximize" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Info -->
+        <div class="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
+            <i data-lucide="info" class="w-4 h-4 inline mr-1"></i>
+            Clique no vídeo para assistir
+        </div>
+    </div>
+</section>
             <!-- SEÇÃO 2: NOSSA HISTÓRIA -->
             <section class="glass-panel p-8 md:p-12 rounded-[2rem]">
                 <div class="flex flex-col md:flex-row gap-10 items-center">
@@ -446,164 +509,7 @@
             </div>
         </div>
     </div>
-<!-- Footer Clean -->
-    <footer class="text-center py-8 text-xs text-gray-400 font-light">
-        <p>PLUMARE INDÚSTRIA E COMÉRCIO</p>
-        <p>CNPJ 44.180.907/0001-55</p>
-    </footer>
 
-    <script>
-        lucide.createIcons();
-
-        // --- LÓGICA DO MODO ESCURO ---
-        function toggleTheme() {
-            const html = document.documentElement;
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            } else {
-                html.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-            }
-        }
-
-        // Verifica preferência salva
-        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-
-        // --- SLIDESHOW ---
-        const images = document.querySelectorAll('.slider-img');
-        let currentImg = 0;
-        function nextImage() {
-            images[currentImg].classList.remove('opacity-100');
-            images[currentImg].classList.add('opacity-0');
-            currentImg = (currentImg + 1) % images.length;
-            images[currentImg].classList.remove('opacity-0');
-            images[currentImg].classList.add('opacity-100');
-        }
-        if(images.length > 0) setInterval(nextImage, 4000);
-
-        // --- PREVIEW LOGO ---
-        function previewLogo(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    document.getElementById('logo-preview').src = e.target.result;
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        // --- CUSTOM VIDEO PLAYER ---
-        const video = document.getElementById('plumare-video');
-        const playPauseBtn = document.getElementById('play-pause-btn');
-        const playIcon = document.getElementById('play-icon');
-        const pauseIcon = document.getElementById('pause-icon');
-        const progressBar = document.getElementById('progress-bar');
-        const progressFill = document.getElementById('progress-fill');
-        const currentTimeEl = document.getElementById('current-time');
-        const durationEl = document.getElementById('duration');
-        const muteBtn = document.getElementById('mute-btn');
-        const volumeIcon = document.getElementById('volume-icon');
-        const muteIcon = document.getElementById('mute-icon');
-        const fullscreenBtn = document.getElementById('fullscreen-btn');
-        const videoControls = document.getElementById('video-controls');
-
-        // Format time helper
-        function formatTime(seconds) {
-            const mins = Math.floor(seconds / 60);
-            const secs = Math.floor(seconds % 60);
-            return `${mins}:${secs.toString().padStart(2, '0')}`;
-        }
-
-        // Play/Pause toggle
-        playPauseBtn.addEventListener('click', () => {
-            if (video.paused) {
-                video.play();
-                playIcon.classList.add('hidden');
-                pauseIcon.classList.remove('hidden');
-            } else {
-                video.pause();
-                playIcon.classList.remove('hidden');
-                pauseIcon.classList.add('hidden');
-            }
-        });
-
-        // Click video to play/pause
-        video.addEventListener('click', () => {
-            playPauseBtn.click();
-        });
-
-        // Update progress bar
-        video.addEventListener('timeupdate', () => {
-            const progress = (video.currentTime / video.duration) * 100;
-            progressFill.style.width = progress + '%';
-            currentTimeEl.textContent = formatTime(video.currentTime);
-        });
-
-        // Set duration when loaded
-        video.addEventListener('loadedmetadata', () => {
-            durationEl.textContent = formatTime(video.duration);
-        });
-
-        // Seek functionality
-        progressBar.addEventListener('click', (e) => {
-            const rect = progressBar.getBoundingClientRect();
-            const pos = (e.clientX - rect.left) / rect.width;
-            video.currentTime = pos * video.duration;
-        });
-
-        // Mute/Unmute
-        muteBtn.addEventListener('click', () => {
-            video.muted = !video.muted;
-            if (video.muted) {
-                volumeIcon.classList.add('hidden');
-                muteIcon.classList.remove('hidden');
-            } else {
-                volumeIcon.classList.remove('hidden');
-                muteIcon.classList.add('hidden');
-            }
-        });
-
-        // Fullscreen
-        fullscreenBtn.addEventListener('click', () => {
-            if (video.requestFullscreen) {
-                video.requestFullscreen();
-            } else if (video.webkitRequestFullscreen) {
-                video.webkitRequestFullscreen();
-            } else if (video.msRequestFullscreen) {
-                video.msRequestFullscreen();
-            }
-        });
-
-        // Show/hide controls
-        let controlsTimeout;
-        video.parentElement.addEventListener('mousemove', () => {
-            videoControls.style.opacity = '1';
-            clearTimeout(controlsTimeout);
-            controlsTimeout = setTimeout(() => {
-                if (!video.paused) {
-                    videoControls.style.opacity = '0';
-                }
-            }, 2000);
-        });
-
-        // Always show controls when paused
-        video.addEventListener('pause', () => {
-            videoControls.style.opacity = '1';
-        });
-
-        video.addEventListener('play', () => {
-            setTimeout(() => {
-                if (!video.paused) {
-                    videoControls.style.opacity = '0';
-                }
-            }, 2000);
-        });
-    </script>
     <!-- Footer Clean -->
     <footer class="text-center py-8 text-xs text-gray-400 font-light">
         <p>PLUMARE INDÚSTRIA E COMÉRCIO</p>
@@ -654,6 +560,115 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
+        <!-- JAVASCRIPT DO PLAYER - ADICIONE ANTES DO </script> FINAL -->
+<script>
+    // --- CUSTOM VIDEO PLAYER ---
+    const video = document.getElementById('plumare-video');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const playIcon = document.getElementById('play-icon');
+    const pauseIcon = document.getElementById('pause-icon');
+    const progressBar = document.getElementById('progress-bar');
+    const progressFill = document.getElementById('progress-fill');
+    const currentTimeEl = document.getElementById('current-time');
+    const durationEl = document.getElementById('duration');
+    const muteBtn = document.getElementById('mute-btn');
+    const volumeIcon = document.getElementById('volume-icon');
+    const muteIcon = document.getElementById('mute-icon');
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+    const videoControls = document.getElementById('video-controls');
+
+    // Format time helper
+    function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    // Play/Pause toggle
+    playPauseBtn.addEventListener('click', () => {
+        if (video.paused) {
+            video.play();
+            playIcon.classList.add('hidden');
+            pauseIcon.classList.remove('hidden');
+        } else {
+            video.pause();
+            playIcon.classList.remove('hidden');
+            pauseIcon.classList.add('hidden');
+        }
+    });
+
+    // Click video to play/pause
+    video.addEventListener('click', () => {
+        playPauseBtn.click();
+    });
+
+    // Update progress bar
+    video.addEventListener('timeupdate', () => {
+        const progress = (video.currentTime / video.duration) * 100;
+        progressFill.style.width = progress + '%';
+        currentTimeEl.textContent = formatTime(video.currentTime);
+    });
+
+    // Set duration when loaded
+    video.addEventListener('loadedmetadata', () => {
+        durationEl.textContent = formatTime(video.duration);
+    });
+
+    // Seek functionality
+    progressBar.addEventListener('click', (e) => {
+        const rect = progressBar.getBoundingClientRect();
+        const pos = (e.clientX - rect.left) / rect.width;
+        video.currentTime = pos * video.duration;
+    });
+
+    // Mute/Unmute
+    muteBtn.addEventListener('click', () => {
+        video.muted = !video.muted;
+        if (video.muted) {
+            volumeIcon.classList.add('hidden');
+            muteIcon.classList.remove('hidden');
+        } else {
+            volumeIcon.classList.remove('hidden');
+            muteIcon.classList.add('hidden');
+        }
+    });
+
+    // Fullscreen
+    fullscreenBtn.addEventListener('click', () => {
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+            video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+            video.msRequestFullscreen();
+        }
+    });
+
+    // Show/hide controls
+    let controlsTimeout;
+    video.parentElement.addEventListener('mousemove', () => {
+        videoControls.style.opacity = '1';
+        clearTimeout(controlsTimeout);
+        controlsTimeout = setTimeout(() => {
+            if (!video.paused) {
+                videoControls.style.opacity = '0';
+            }
+        }, 2000);
+    });
+
+    // Always show controls when paused
+    video.addEventListener('pause', () => {
+        videoControls.style.opacity = '1';
+    });
+
+    video.addEventListener('play', () => {
+        setTimeout(() => {
+            if (!video.paused) {
+                videoControls.style.opacity = '0';
+            }
+        }, 2000);
+    });
+</script>
     </script>
 </body>
 </html>
