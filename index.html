@@ -446,7 +446,164 @@
             </div>
         </div>
     </div>
+<!-- Footer Clean -->
+    <footer class="text-center py-8 text-xs text-gray-400 font-light">
+        <p>PLUMARE INDÚSTRIA E COMÉRCIO</p>
+        <p>CNPJ 44.180.907/0001-55</p>
+    </footer>
 
+    <script>
+        lucide.createIcons();
+
+        // --- LÓGICA DO MODO ESCURO ---
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Verifica preferência salva
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // --- SLIDESHOW ---
+        const images = document.querySelectorAll('.slider-img');
+        let currentImg = 0;
+        function nextImage() {
+            images[currentImg].classList.remove('opacity-100');
+            images[currentImg].classList.add('opacity-0');
+            currentImg = (currentImg + 1) % images.length;
+            images[currentImg].classList.remove('opacity-0');
+            images[currentImg].classList.add('opacity-100');
+        }
+        if(images.length > 0) setInterval(nextImage, 4000);
+
+        // --- PREVIEW LOGO ---
+        function previewLogo(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('logo-preview').src = e.target.result;
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        // --- CUSTOM VIDEO PLAYER ---
+        const video = document.getElementById('plumare-video');
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const playIcon = document.getElementById('play-icon');
+        const pauseIcon = document.getElementById('pause-icon');
+        const progressBar = document.getElementById('progress-bar');
+        const progressFill = document.getElementById('progress-fill');
+        const currentTimeEl = document.getElementById('current-time');
+        const durationEl = document.getElementById('duration');
+        const muteBtn = document.getElementById('mute-btn');
+        const volumeIcon = document.getElementById('volume-icon');
+        const muteIcon = document.getElementById('mute-icon');
+        const fullscreenBtn = document.getElementById('fullscreen-btn');
+        const videoControls = document.getElementById('video-controls');
+
+        // Format time helper
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // Play/Pause toggle
+        playPauseBtn.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+            } else {
+                video.pause();
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+            }
+        });
+
+        // Click video to play/pause
+        video.addEventListener('click', () => {
+            playPauseBtn.click();
+        });
+
+        // Update progress bar
+        video.addEventListener('timeupdate', () => {
+            const progress = (video.currentTime / video.duration) * 100;
+            progressFill.style.width = progress + '%';
+            currentTimeEl.textContent = formatTime(video.currentTime);
+        });
+
+        // Set duration when loaded
+        video.addEventListener('loadedmetadata', () => {
+            durationEl.textContent = formatTime(video.duration);
+        });
+
+        // Seek functionality
+        progressBar.addEventListener('click', (e) => {
+            const rect = progressBar.getBoundingClientRect();
+            const pos = (e.clientX - rect.left) / rect.width;
+            video.currentTime = pos * video.duration;
+        });
+
+        // Mute/Unmute
+        muteBtn.addEventListener('click', () => {
+            video.muted = !video.muted;
+            if (video.muted) {
+                volumeIcon.classList.add('hidden');
+                muteIcon.classList.remove('hidden');
+            } else {
+                volumeIcon.classList.remove('hidden');
+                muteIcon.classList.add('hidden');
+            }
+        });
+
+        // Fullscreen
+        fullscreenBtn.addEventListener('click', () => {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) {
+                video.msRequestFullscreen();
+            }
+        });
+
+        // Show/hide controls
+        let controlsTimeout;
+        video.parentElement.addEventListener('mousemove', () => {
+            videoControls.style.opacity = '1';
+            clearTimeout(controlsTimeout);
+            controlsTimeout = setTimeout(() => {
+                if (!video.paused) {
+                    videoControls.style.opacity = '0';
+                }
+            }, 2000);
+        });
+
+        // Always show controls when paused
+        video.addEventListener('pause', () => {
+            videoControls.style.opacity = '1';
+        });
+
+        video.addEventListener('play', () => {
+            setTimeout(() => {
+                if (!video.paused) {
+                    videoControls.style.opacity = '0';
+                }
+            }, 2000);
+        });
+    </script>
     <!-- Footer Clean -->
     <footer class="text-center py-8 text-xs text-gray-400 font-light">
         <p>PLUMARE INDÚSTRIA E COMÉRCIO</p>
