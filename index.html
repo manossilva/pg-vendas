@@ -258,7 +258,7 @@
                     </a>
                 </div>
             </section>
-<!-- SEÇÃO DE VÍDEO - ADICIONE APÓS A SEÇÃO DE LINKS SOCIAIS -->
+<!-- SEÇÃO DE VÍDEO - FORMATO REELS -->
 <section class="glass-panel p-6 rounded-[2rem]">
     <div class="text-center mb-6">
         <h2 class="text-2xl font-bold text-plumare-blue mb-2">Conheça Nossa História</h2>
@@ -266,20 +266,20 @@
     </div>
 
     <!-- Video Player Container -->
-    <div class="relative w-full max-w-4xl mx-auto">
+    <div class="relative w-full max-w-md mx-auto">
         <!-- Video Element -->
         <div class="relative rounded-2xl overflow-hidden bg-black shadow-2xl">
             <video 
                 id="plumare-video" 
-                class="w-full aspect-video"
-                poster="https://hfqcnejztaczhxattlsx.supabase.co/storage/v1/object/sign/Arquivos%20site/Gemini_Generated_Image_fri0upfri0upfri0%202.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYmU5YzEyYy0yYzBiLTQwMDItOTA0Mi0xMzU1YWNkMWQ1ZTMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJBcnF1aXZvcyBzaXRlL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfZnJpMHVwZnJpMHVwZnJpMCAyLmpwZyIsImlhdCI6MTc3MDAzNjQ2OCwiZXhwIjoxODAxNTcyNDY4fQ.n2nbAIv-je44dJa6X2CA0GeFSfWLnHlSxVHTp8FqXDM">
+                class="w-full aspect-[9/16]"
+                poster="https://hfqcnejztaczhxattlsx.supabase.co/storage/v1/object/sign/Arquivos%20site/casal.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYmU5YzEyYy0yYzBiLTQwMDItOTA0Mi0xMzU1YWNkMWQ1ZTMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJBcnF1aXZvcyBzaXRlL2Nhc2FsLmpwZyIsImlhdCI6MTc3MDAzNTM2OSwiZXhwIjoxODAxNTcxMzY5fQ.xYqFSU_rGusNXYM0HMb2u7YizILGoj9eNXjmjsOMOsQ">
                 <!-- 🎥 COLE O LINK DO SEU VÍDEO DO SUPABASE AQUI 👇 -->
-                <source src="https://hfqcnejztaczhxattlsx.supabase.co/storage/v1/object/sign/Arquivos%20site/Agora_faa_uma_202602011132_rsyc3.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYmU5YzEyYy0yYzBiLTQwMDItOTA0Mi0xMzU1YWNkMWQ1ZTMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJBcnF1aXZvcyBzaXRlL0Fnb3JhX2ZhYV91bWFfMjAyNjAyMDExMTMyX3JzeWMzLm1wNCIsImlhdCI6MTc3MDA0MjY4NCwiZXhwIjoxODAxNTc4Njg0fQ.S8ESuZ9TZfkFJbMnnC8QEclrNXraNWHtEFCELqvCcFs" type="video/mp4">
+                <source src="https://hfqcnejztaczhxattlsx.supabase.co/storage/v1/object/sign/Arquivos%20site/video%20institucional%20.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYmU5YzEyYy0yYzBiLTQwMDItOTA0Mi0xMzU1YWNkMWQ1ZTMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJBcnF1aXZvcyBzaXRlL3ZpZGVvIGluc3RpdHVjaW9uYWwgLm1wNCIsImlhdCI6MTc3MDA0MzUyMiwiZXhwIjoxODAxNTc5NTIyfQ.OTf7lzj7_gJRZhQQ0Z2hq7IxXcYaKF3XmpAu6k9nVK4" type="video/mp4">
                 Seu navegador não suporta a reprodução de vídeo.
             </video>
 
             <!-- Custom Controls Overlay -->
-            <div id="video-controls" class="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm transition-opacity duration-300 opacity-0 hover:opacity-100">
+            <div id="video-controls" class="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm transition-opacity duration-300 opacity-0">
                 <!-- Play/Pause Button -->
                 <button id="play-pause-btn" class="glass-panel w-20 h-20 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-2xl">
                     <i id="play-icon" data-lucide="play" class="w-10 h-10 text-plumare-blue"></i>
@@ -318,7 +318,7 @@
         <!-- Video Info -->
         <div class="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
             <i data-lucide="info" class="w-4 h-4 inline mr-1"></i>
-            Clique no vídeo para assistir
+            Toque no vídeo para assistir
         </div>
     </div>
 </section>
@@ -332,10 +332,9 @@
                         </p>
                     </div>
                     <div class="flex-1 w-full relative group">
-                        <!-- [IMAGEM] SLIDER DA HISTÓRIA 1 e 2 -->
+                        <!-- [IMAGEM] SLIDER DA HISTÓRIA 1  -->
                         <div class="relative h-64 w-full rounded-2xl overflow-hidden shadow-sm border border-white/50 dark:border-white/10">
                             <img src="https://hfqcnejztaczhxattlsx.supabase.co/storage/v1/object/sign/Arquivos%20site/casal.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYmU5YzEyYy0yYzBiLTQwMDItOTA0Mi0xMzU1YWNkMWQ1ZTMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJBcnF1aXZvcyBzaXRlL2Nhc2FsLmpwZyIsImlhdCI6MTc3MDAzNTM2OSwiZXhwIjoxODAxNTcxMzY5fQ.xYqFSU_rGusNXYM0HMb2u7YizILGoj9eNXjmjsOMOsQ" class="slider-img absolute w-full h-full object-cover transition-opacity duration-1000 opacity-100" alt="Fábrica">
-                            <img src="https://images.unsplash.com/photo-1606246949366-231a38a360a8?auto=format&fit=crop&q=80" class="slider-img absolute w-full h-full object-cover transition-opacity duration-1000 opacity-0" alt="Tecidos">
                         </div>
                     </div>
                 </div>
@@ -644,21 +643,25 @@
         }
     });
 
-    // Show/hide controls
+    // Show/hide controls - TEMPO REDUZIDO PARA 800ms
     let controlsTimeout;
-    video.parentElement.addEventListener('mousemove', () => {
+    const showControls = () => {
         videoControls.style.opacity = '1';
         clearTimeout(controlsTimeout);
-        controlsTimeout = setTimeout(() => {
-            if (!video.paused) {
+        if (!video.paused) {
+            controlsTimeout = setTimeout(() => {
                 videoControls.style.opacity = '0';
-            }
-        }, 2000);
-    });
+            }, 800); // Reduzido de 2000ms para 800ms
+        }
+    };
+
+    video.parentElement.addEventListener('mousemove', showControls);
+    video.parentElement.addEventListener('touchstart', showControls);
 
     // Always show controls when paused
     video.addEventListener('pause', () => {
         videoControls.style.opacity = '1';
+        clearTimeout(controlsTimeout);
     });
 
     video.addEventListener('play', () => {
@@ -666,8 +669,11 @@
             if (!video.paused) {
                 videoControls.style.opacity = '0';
             }
-        }, 2000);
+        }, 800); // Reduzido de 2000ms para 800ms
     });
+
+    // Reinicializar ícones do Lucide
+    lucide.createIcons();
 </script>
     </script>
 </body>
